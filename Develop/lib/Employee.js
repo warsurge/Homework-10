@@ -4,7 +4,9 @@
 
 const inquirer = require("inquirer");
 
-function promptEmployee(){
+class Employee{
+
+promptEmployee(){
 
 return inquirer.prompt([
     {
@@ -12,6 +14,11 @@ return inquirer.prompt([
         name: "title",
         choices: ["Manager", "Engineer", "Intern"]
 
+    },
+    {
+        type: "input",
+        name: "name",
+        message: "What is your name?"
     },
     {
         type: "input",
@@ -23,4 +30,17 @@ return inquirer.prompt([
         name: "email",
         message: "What is your email?"
     }])
+
+    if (answers.manager = true){
+        promptManager()
+    } else if{
+        answers.engineer = true
+        promptEngineer()
+    }else{
+        promptIntern()
+    }
 }
+
+}
+
+module.exports = Employee

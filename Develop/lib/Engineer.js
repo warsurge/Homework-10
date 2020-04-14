@@ -2,6 +2,7 @@
 // import employee.js
 
 const inquirer = require("inquirer");
+const Employee = require("./Employee")
 
 function promptEngineer(){
     return inquirer.prompt({
