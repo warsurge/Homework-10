@@ -36,20 +36,7 @@ const render = require("./lib/htmlRenderer");
             message: "What is your office number?"
         }])
         
-    
 }
-function promptEmployee(){
-
-    return inquirer.prompt(
-        {
-            type: "checklist",
-            name: "title",
-            message: "Do you want to add another Employee?",
-            choices: ["I Don't Want to Add Someone", "Engineer", "Intern"]
-    
-        }
-        )
-    }
 
 function promptEngineer(){[
     {
@@ -74,6 +61,7 @@ function promptEngineer(){[
     }]
     return inquirer.prompt()
 }
+
 function promptIntern(){
     return inquirer.prompt([
         {
@@ -98,6 +86,19 @@ function promptIntern(){
         }]
         )
 }
+
+function promptEmployee(){
+
+    return inquirer.prompt(
+        {
+            type: "list",
+            name: "title",
+            message: "Do you want to add another Employee?",
+            choices: ["I Don't Want to Add Someone", "Engineer", "Intern"]
+    
+        }
+        )
+    }
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
